@@ -22,11 +22,11 @@
           
             <div id="navbarBasicExample" class="navbar-menu">
               <div class="navbar-start">
-                <a class="navbar-item">
+                <a class="navbar-item" href="{{ path("home") }}">
                   Accueil
                 </a>
           
-                <a class="navbar-item">
+                <a class="navbar-item" href="{{ path("blog") }}">
                   Mes articles
                 </a>
                 <a class="navbar-item">
@@ -51,7 +51,7 @@
           </nav>
     </head>
     <body>
-        <div class="container is-fluid" style="margin-top: 50px;">
+        <div class="container is-fluid" style="margin-top: 20px;">
             {% block body %}
             {% endblock %}
         </div>

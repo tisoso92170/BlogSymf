@@ -1,7 +1,173 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello BlogController!{% endblock %}
+{% block title %}Hello BlogController!
+{% endblock %}
 
 {% block body %}
-<h1 style="text-align: center; font-size: 49px; font-family: 'Girassol', cursive; color: crimson;">Mon blog</h1>
+	<h1 style="text-align: center; font-size: 49px; font-family: 'Girassol', cursive; color: crimson; margin-bottom: 15px;">Liste de mes articles</h1>
+
+	<div class="row columns is-multiline">
+		<div class="column is-one-fifth">
+			<div class="card">
+				<header class="card-header">
+					<p class="card-header-title">
+						Article first
+					</p>
+					<a href="#" class="card-header-icon" aria-label="more options">
+						<span class="icon">
+							<i class="fas fa-angle-down" aria-hidden="true"></i>
+						</span>
+					</a>
+				</header>
+				<div class="card-content">
+					<div class="content">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+						<a href="#">lire la suite...</a>
+						<br>
+						<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+					</div>
+				</div>
+				<footer class="card-footer">
+					<a href="{{ path("blog.show") }}" class="card-footer-item" style="color: blueviolet;">Suite</a>
+					<a href="#" class="card-footer-item" style="color: aquamarine;">Edit</a>
+					<a href="#" class="card-footer-item" style="color: red;">Delete</a>
+				</footer>
+			</div>
+		</div>
+		<div class="column is-one-fifth">
+			<div class="card">
+				<header class="card-header">
+					<p class="card-header-title">
+						Article first
+					</p>
+					<a href="#" class="card-header-icon" aria-label="more options">
+						<span class="icon">
+							<i class="fas fa-angle-down" aria-hidden="true"></i>
+						</span>
+					</a>
+				</header>
+				<div class="card-content">
+					<div class="content">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+						<a href="#">lire la suite...</a>
+						<br>
+						<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+					</div>
+				</div>
+				<footer class="card-footer">
+					<a href="{{ path("blog.show") }}" class="card-footer-item" style="color: blueviolet;">Suite</a>
+					<a href="#" class="card-footer-item" style="color: aquamarine;">Edit</a>
+					<a href="#" class="card-footer-item" style="color: red;">Delete</a>
+				</footer>
+			</div>
+		</div>
+		<div class="column is-one-fifth">
+			<div class="card">
+				<header class="card-header">
+					<p class="card-header-title">
+						Article first
+					</p>
+					<a href="#" class="card-header-icon" aria-label="more options">
+						<span class="icon">
+							<i class="fas fa-angle-down" aria-hidden="true"></i>
+						</span>
+					</a>
+				</header>
+				<div class="card-content">
+					<div class="content">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+						<a href="#">lire la suite...</a>
+						<br>
+						<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+					</div>
+				</div>
+				<footer class="card-footer">
+					<a href="{{ path("blog.show") }}" class="card-footer-item" style="color: blueviolet;">Suite</a>
+					<a href="#" class="card-footer-item" style="color: aquamarine;">Edit</a>
+					<a href="#" class="card-footer-item" style="color: red;">Delete</a>
+				</footer>
+			</div>
+		</div>
+		<div class="column is-one-fifth">
+			<div class="card">
+				<header class="card-header">
+					<p class="card-header-title">
+						Article first
+					</p>
+					<a href="#" class="card-header-icon" aria-label="more options">
+						<span class="icon">
+							<i class="fas fa-angle-down" aria-hidden="true"></i>
+						</span>
+					</a>
+				</header>
+				<div class="card-content">
+					<div class="content">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+						<a href="#">lire la suite...</a>
+						<br>
+						<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+					</div>
+				</div>
+				<footer class="card-footer">
+					<a href="{{ path("blog.show") }}" class="card-footer-item" style="color: blueviolet;">Suite</a>
+					<a href="#" class="card-footer-item" style="color: aquamarine;">Edit</a>
+					<a href="#" class="card-footer-item" style="color: red;">Delete</a>
+				</footer>
+			</div>
+        </div>
+        <div class="column is-one-fifth">
+			<div class="card">
+				<header class="card-header">
+					<p class="card-header-title">
+						Article first
+					</p>
+					<a href="#" class="card-header-icon" aria-label="more options">
+						<span class="icon">
+							<i class="fas fa-angle-down" aria-hidden="true"></i>
+						</span>
+					</a>
+				</header>
+				<div class="card-content">
+					<div class="content">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+						<a href="#">lire la suite...</a>
+						<br>
+						<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+					</div>
+				</div>
+				<footer class="card-footer">
+					<a href="{{ path("blog.show") }}" class="card-footer-item" style="color: blueviolet;">Suite</a>
+					<a href="#" class="card-footer-item" style="color: aquamarine;">Edit</a>
+					<a href="#" class="card-footer-item" style="color: red;">Delete</a>
+				</footer>
+			</div>
+        </div>
+        <div class="column is-one-fifth">
+			<div class="card">
+				<header class="card-header">
+					<p class="card-header-title">
+						Article first
+					</p>
+					<a href="#" class="card-header-icon" aria-label="more options">
+						<span class="icon">
+							<i class="fas fa-angle-down" aria-hidden="true"></i>
+						</span>
+					</a>
+				</header>
+				<div class="card-content">
+					<div class="content">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+						<a href="#">lire la suite...</a>
+						<br>
+						<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+					</div>
+				</div>
+				<footer class="card-footer">
+					<a href="{{ path("blog.show") }}" class="card-footer-item" style="color: blueviolet;">Suite</a>
+					<a href="#" class="card-footer-item" style="color: aquamarine;">Edit</a>
+					<a href="#" class="card-footer-item" style="color: red;">Delete</a>
+				</footer>
+			</div>
+		</div>
+	</div>
 {% endblock %}
