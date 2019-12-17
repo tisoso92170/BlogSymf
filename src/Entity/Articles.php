@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -51,6 +53,28 @@ class Articles
      * @ORM\JoinColumn(nullable=false)
      */
     private $users;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Commentaires", mappedBy="articles", orphanRemoval=true)
+     */
+    private $commentaires;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\MotsCles", inversedBy="articles")
+     */
+    private $mots_cles;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Categories", inversedBy="articles")
+     */
+    private $categories;
+
+    public function __construct()
+    {
+        $this->commentaires = new ArrayCollection();
+        $this->mots_cles = new ArrayCollection();
+        $this->categories = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -137,6 +161,89 @@ class Articles
     public function setUsers(?Users $users): self
     {
         $this->users = $users;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Commentaires[]
+     */
+    public function getCommentaires(): Collection
+    {
+        return $this->commentaires;
+    }
+
+    public function addCommentaire(Commentaires $commentaire): self
+    {
+        if (!$this->commentaires->contains($commentaire)) {
+            $this->commentaires[] = $commentaire;
+            $commentaire->setArticles($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommentaire(Commentaires $commentaire): self
+    {
+        if ($this->commentaires->contains($commentaire)) {
+            $this->commentaires->removeElement($commentaire);
+            // set the owning side to null (unless already changed)
+            if ($commentaire->getArticles() === $this) {
+                $commentaire->setArticles(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|MotsCles[]
+     */
+    public function getMotsCles(): Collection
+    {
+        return $this->mots_cles;
+    }
+
+    public function addMotsCle(MotsCles $motsCle): self
+    {
+        if (!$this->mots_cles->contains($motsCle)) {
+            $this->mots_cles[] = $motsCle;
+        }
+
+        return $this;
+    }
+
+    public function removeMotsCle(MotsCles $motsCle): self
+    {
+        if ($this->mots_cles->contains($motsCle)) {
+            $this->mots_cles->removeElement($motsCle);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Categories[]
+     */
+    public function getCategories(): Collection
+    {
+        return $this->categories;
+    }
+
+    public function addCategory(Categories $category): self
+    {
+        if (!$this->categories->contains($category)) {
+            $this->categories[] = $category;
+        }
+
+        return $this;
+    }
+
+    public function removeCategory(Categories $category): self
+    {
+        if ($this->categories->contains($category)) {
+            $this->categories->removeElement($category);
+        }
 
         return $this;
     }
