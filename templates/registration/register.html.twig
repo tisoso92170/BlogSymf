@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+    {{ form_start(registrationForm) }}
+    <section class="hero" style="margin-top: 200px;">
+        <div class="hero-body">
+          <div class="container">
+            <div class="columns is-centered">
+              <article class="card is-rounded" style="border-radius: 8px; background-color: #cccccc;">
+                <div class="card-content">
+                  <h1 class="title">                
+                    Veuillez vous inscrire
+                  </h1>
+                  <p class="control has-icon">
+                    {{ form_row(registrationForm.email, {'attr': {'label': 'email', 'class': 'input'}}) }}
+                    <i class="fa fa-envelope"></i>
+                  </p>
+                  <br>
+                  <p class="control has-icon">
+                    {{ form_row(registrationForm.plainPassword, {'attr': {'label': 'mot de passe', 'class': 'input',}}) }}
+                    <i class="fa fa-lock"></i>
+                  </p>
+    
+                  <p class="control">
+                        {{ form_row(registrationForm.agreeTerms, {'label': 'Accepter les conditions utilisation'}) }}
+                  </p>
+                  <br>
+                  <p class="control">
+                    <button class="button is-danger is-medium is-fullwidth">
+                      <i class="fa fa-user"></i>
+                      Lancer la connection
+                    </button>
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+    </div>
+    </section>
+
+    {{ form_end(registrationForm) }}
+{% endblock %}

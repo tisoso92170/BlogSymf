@@ -38,12 +38,21 @@
               <div class="navbar-end">
                 <div class="navbar-item">
                   <div class="buttons">
-                    <a class="button is-primary">
-                      <strong>Sign up</strong>
+                    {% if app.user %}
+                    <a>
+                      <strong>Bienvenue : {{ app.user.username }}</strong>
                     </a>
-                    <a class="button is-light">
-                      Log in
+                    <a class="button is-primary" style="margin-left: 20px; color: white;" href="{{ path('app_logout') }}">
+                      <strong>Deconnection</strong>
                     </a>
+                    {% else %}
+                    <a class="button is-primary" href="{{ path('app_login') }}">
+                      <strong>Connection</strong>
+                    </a>
+                    <a class="button is-light" href="{{ path('app_register') }}">
+                      Inscription
+                    </a>
+                    {% endif %}
                   </div>
                 </div>
               </div>

@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connection{% endblock %}
+
+{% block body %}
+<form method="post">
+    {% if error %}
+        <div class="notification is-danger" style="text-align: center;">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+        <section class="hero" style="margin-top: 200px;">
+              <div class="hero-body">
+                <div class="container">
+                  <div class="columns is-centered">
+                    <article class="card is-rounded" style="border-radius: 8px; background-color: #cccccc;">
+                      <div class="card-content">
+                        <h1 class="title">                
+                          Veuillez vous connectez
+                        </h1>
+                        <p class="control has-icon">
+                            <input class="input" type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
+                          <i class="fa fa-envelope"></i>
+                        </p>
+                        <br>
+                        <p class="control has-icon">
+                            <input class="input" type="password" name="password" id="inputPassword" class="form-control" required>
+                          <i class="fa fa-lock"></i>
+                        </p>
+
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                        <p class="control">
+                          <label class="checkbox">
+                            <input type="checkbox" name="_remember_me">
+                            Se souvenir de moi
+                          </label>
+                        </p>
+                        <br>
+                        <p class="control">
+                          <button class="button is-danger is-medium is-fullwidth">
+                            <i class="fa fa-user"></i>
+                            Lancer la connection
+                          </button>
+                        </p>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+          </div>
+        </section>
+{% endblock %}
